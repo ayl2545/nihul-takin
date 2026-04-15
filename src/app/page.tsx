@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <section className="relative overflow-hidden">
@@ -22,18 +20,12 @@ export default function Home() {
 
       <div className="container-custom relative min-h-[calc(100vh-5rem)] flex items-center py-20 lg:py-28">
         <div className="max-w-4xl">
-          <h1 className="sr-only">ניהול תקין - מעטפת ניהולית בע״מ</h1>
-
-          <div className="mb-10 animate-fade-in">
-            <Image
-              src="/images/logo.png"
-              alt="ניהול תקין - מעטפת ניהולית בע״מ"
-              width={520}
-              height={383}
-              priority
-              className="w-56 sm:w-72 lg:w-[22rem] h-auto object-contain drop-shadow-[0_20px_60px_rgba(212,162,73,0.25)]"
-            />
-          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] mb-8 animate-slide-up">
+            <span className="text-white">ניהול תקין</span>
+            <span className="block text-gradient-gold mt-2">
+              מעטפת ניהולית בע״מ
+            </span>
+          </h1>
 
           <div className="gold-divider mb-10" />
 
