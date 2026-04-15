@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X, Shield, UserCircle2 } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "בית" },
@@ -82,12 +82,15 @@ export default function Header() {
             })}
           </nav>
 
-          <Link
-            href="/contact"
-            className="hidden lg:inline-flex btn-primary !py-2 !px-5 text-sm"
+          <button
+            type="button"
+            disabled
+            aria-disabled="true"
+            className="hidden lg:inline-flex btn-primary !py-2 !px-5 text-sm opacity-70 cursor-not-allowed"
           >
-            פנייה לייעוץ
-          </Link>
+            <UserCircle2 className="w-4 h-4" />
+            איזור אישי
+          </button>
 
           <button
             type="button"
@@ -121,12 +124,15 @@ export default function Header() {
                   </Link>
                 );
               })}
-              <Link
-                href="/contact"
-                className="btn-primary mt-3 mx-4 !py-2.5"
+              <button
+                type="button"
+                disabled
+                aria-disabled="true"
+                className="btn-primary mt-3 mx-4 !py-2.5 opacity-70 cursor-not-allowed"
               >
-                פנייה לייעוץ
-              </Link>
+                <UserCircle2 className="w-4 h-4" />
+                איזור אישי
+              </button>
             </nav>
           </div>
         )}
