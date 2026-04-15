@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Shield, ExternalLink, Mail, FileText } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, Mail, FileText } from "lucide-react";
 
 const navColumns = [
   {
@@ -45,16 +46,18 @@ export default function Footer() {
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shadow-gold">
-                <Shield className="w-5 h-5 text-navy-950" strokeWidth={2.5} />
-              </div>
-              <div className="leading-tight">
-                <div className="font-bold text-white text-base">ניהול תקין</div>
-                <div className="text-[11px] text-gold-300/80 tracking-[0.2em] uppercase">
-                  מעטפת ניהולית
-                </div>
-              </div>
+            <Link
+              href="/"
+              aria-label="ניהול תקין - מעטפת ניהולית בע״מ"
+              className="inline-flex items-center mb-5"
+            >
+              <Image
+                src="/images/logo.png"
+                alt="ניהול תקין - מעטפת ניהולית בע״מ"
+                width={260}
+                height={192}
+                className="h-16 w-auto object-contain"
+              />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               גוף ליווי וניהול-על לעמותות וארגונים ציבוריים. תשתית ניהולית,
