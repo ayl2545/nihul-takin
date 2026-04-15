@@ -32,7 +32,7 @@ const navColumns = [
   {
     title: "החברה",
     links: [
-      { href: "/", label: "אודות" },
+      { href: "/", label: "בית" },
       { href: "/contact", label: "צור קשר" },
     ],
   },
@@ -56,14 +56,10 @@ export default function Footer() {
                 </div>
               </div>
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed mb-5">
+            <p className="text-sm text-slate-400 leading-relaxed">
               גוף ליווי וניהול-על לעמותות וארגונים ציבוריים. תשתית ניהולית,
               רגולטורית ומערכתית מקיפה.
             </p>
-            <div className="flex items-center gap-2 text-xs text-slate-500">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-accent animate-pulse" />
-              בסיעתא דשמיא
-            </div>
           </div>
 
           {navColumns.map((col) => (

@@ -1,29 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ShieldCheck,
-  FileText,
-  AlertTriangle,
-  Users,
-  ClipboardList,
-  Receipt,
-  Search,
-  TrendingUp,
-  Sparkles,
-} from "lucide-react";
+import { ArrowLeft, AlertTriangle, Sparkles } from "lucide-react";
 import { topics, topicsBySlug } from "@/data/topics";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ShieldCheck,
-  Coins: TrendingUp,
-  FileText,
-  AlertTriangle,
-  Users,
-  ClipboardList,
-  Receipt,
-  Search,
-};
+import { resolveTopicIcon } from "@/lib/topic-icons";
 
 export function generateStaticParams() {
   return topics.map((t) => ({ slug: t.slug }));
@@ -42,7 +21,7 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
   const topic = topicsBySlug[params.slug];
   if (!topic) notFound();
 
-  const Icon = iconMap[topic.icon] || FileText;
+  const Icon = resolveTopicIcon(topic.icon);
   const currentIdx = topics.findIndex((t) => t.slug === topic.slug);
   const prev = currentIdx > 0 ? topics[currentIdx - 1] : null;
   const next =

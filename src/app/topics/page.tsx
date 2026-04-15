@@ -1,28 +1,7 @@
 import Link from "next/link";
-import {
-  Lightbulb,
-  ArrowLeft,
-  ShieldCheck,
-  FileText,
-  AlertTriangle,
-  Users,
-  ClipboardList,
-  Receipt,
-  Search,
-  TrendingUp,
-} from "lucide-react";
+import { Lightbulb, ArrowLeft } from "lucide-react";
 import { topics } from "@/data/topics";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ShieldCheck,
-  Coins: TrendingUp,
-  FileText,
-  AlertTriangle,
-  Users,
-  ClipboardList,
-  Receipt,
-  Search,
-};
+import { resolveTopicIcon } from "@/lib/topic-icons";
 
 export default function TopicsPage() {
   return (
@@ -52,7 +31,7 @@ export default function TopicsPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {topics.map((topic, idx) => {
-              const Icon = iconMap[topic.icon] || FileText;
+              const Icon = resolveTopicIcon(topic.icon);
               return (
                 <Link
                   key={topic.slug}

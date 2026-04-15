@@ -7,14 +7,31 @@ import Footer from "@/components/Footer";
 const heebo = Heebo({
   subsets: ["hebrew", "latin"],
   variable: "--font-heebo",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
+const SITE_TITLE = "ניהול תקין - מעטפת ניהולית בע״מ";
+const SITE_DESCRIPTION =
+  "גוף ליווי וניהול-על לעמותות וארגונים ציבוריים. תשתית ניהולית, רגולטורית ומערכתית מקיפה.";
+
 export const metadata: Metadata = {
-  title: "ניהול תקין - מעטפת ניהולית בע״מ",
-  description:
-    "גוף ליווי וניהול-על לעמותות וארגונים ציבוריים. תשתית ניהולית, רגולטורית ומערכתית מקיפה.",
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_TITLE}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    type: "website",
+    locale: "he_IL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

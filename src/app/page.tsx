@@ -1,11 +1,11 @@
-import { Sparkles } from "lucide-react";
+import { Shield } from "lucide-react";
 
 export default function Home() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-hero-glow" aria-hidden="true" />
       <div
-        className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-[0.4]"
+        className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-40"
         aria-hidden="true"
       />
       <div
@@ -13,11 +13,20 @@ export default function Home() {
         aria-hidden="true"
       />
 
+      <div
+        aria-hidden="true"
+        className="absolute left-[-10%] top-1/2 -translate-y-1/2 w-[560px] h-[560px] opacity-[0.06] pointer-events-none hidden lg:block"
+      >
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-gold-300 to-transparent blur-3xl" />
+      </div>
+
       <div className="container-custom relative min-h-[calc(100vh-5rem)] flex items-center py-20 lg:py-28">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-400/30 bg-gold-400/5 text-gold-300 text-xs font-semibold tracking-[0.2em] uppercase mb-8 animate-fade-in">
-            <Sparkles className="w-3.5 h-3.5" />
-            בסיעתא דשמיא
+          <div
+            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 shadow-gold mb-10 animate-fade-in"
+            aria-hidden="true"
+          >
+            <Shield className="w-7 h-7 text-navy-950" strokeWidth={2.5} />
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] mb-8 animate-slide-up">

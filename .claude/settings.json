@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/ayl2545/.claude/projects//**)",
+      "Bash(ls -lat /c/Users/ayl2545/.claude/projects/c--Users-ayl2545-projects-nihul-takin/*.jsonl /c/Users/ayl2545/.claude/projects/C--Users-ayl2545/*.jsonl)",
+      "Bash(git commit -m ' *)",
+      "Bash(grep -n \"topicsBySlug\" c:\\\\\\\\Users\\\\\\\\ayl2545\\\\\\\\projects\\\\\\\\nihul-takin\\\\\\\\src\\\\\\\\data\\\\\\\\topics.ts)"
+    ]
+  }
+}
