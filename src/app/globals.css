@@ -3,24 +3,102 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b152a;
+  --foreground: #e2e8f0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(212, 162, 73, 0.08),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 80% 120%,
+      rgba(47, 159, 107, 0.06),
+      transparent
+    );
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(212, 162, 73, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b152a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #253f6f;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c4e8a;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-l from-gold-500 to-gold-400 text-navy-950 font-semibold shadow-gold hover:shadow-[0_15px_50px_-10px_rgba(212,162,73,0.5)] hover:scale-[1.02] transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-gold-400/40 text-gold-300 hover:bg-gold-400/10 hover:border-gold-400 transition-all duration-300;
+  }
+
+  .card-glass {
+    @apply relative bg-gradient-to-br from-navy-900/80 to-navy-900/40 backdrop-blur-sm border border-navy-700/60 rounded-2xl overflow-hidden hover:border-gold-400/40 transition-all duration-500;
+  }
+
+  .section-heading {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4;
+  }
+
+  .section-sub {
+    @apply text-gold-400 text-sm font-semibold tracking-[0.3em] uppercase mb-3;
+  }
+
+  .gold-divider {
+    @apply w-20 h-[2px] bg-gradient-to-l from-gold-400 to-transparent;
+  }
 }
 
 @layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #dfbc6b 0%, #d4a249 50%, #c5893a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-navy {
+    background: linear-gradient(135deg, #f0f5fb 0%, #b8cde8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
